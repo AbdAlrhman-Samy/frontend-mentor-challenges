@@ -1,0 +1,12 @@
+:root {
+    --primary-orange: hsl(35, 77%, 62%);
+    --primary-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --gray-blue: hsl(233, 8%, 79%);
+    --dark-blue: hsl(240, 100%, 5%);
+    --dark-gray-blue: hsl(236, 13%, 42%);
+
+    --font-light: 400;
+    --font-normal: 700;
+    --font-bold: 800;
+}

@@ -1,0 +1,127 @@
+/* Large Screens */
+@media (min-width: 993px) {
+
+    .container {
+        padding: 2em 10em;
+    }
+
+    .navbar__menu-button {
+        display: none;
+    }
+
+    .navbar__links {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 3em;
+    }
+
+    .headline__details {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3em;
+        padding: 1em 0;
+    }
+
+    .headline__title {
+        width: 40%;
+    }
+    
+    .headline__description {
+        width: 50%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "main main side"
+        "main main side"
+        "more more more";
+    }
+
+    .recommended {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        height: 75%;
+    }
+
+    .card__details {
+
+        justify-content: space-between;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 992px) {
+
+    .container {
+        padding: 2em;
+    }
+
+    .navbar__menu-button {
+        display: block;
+    }
+
+    .navbar__links {
+        display: none;
+    }
+
+    /* .navbar__links {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--off-white);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        min-height: 100vh;
+        width: 100vw;
+    }
+
+    .navbar__links-item--mobile{
+        font-size: 2em;
+        font-weight: var(--font-bold);
+    } */
+
+    .headline__details {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3em;
+        padding: 1em 0;
+    }
+
+    .headline__title {
+        width: 100%;
+    }
+    
+    .headline__description {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-areas: 
+        "main"
+        "side"
+        "more";
+    }
+
+    .recommended {
+        gap: 1em;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card__details {
+        justify-content: space-evenly;
+    }
+}
