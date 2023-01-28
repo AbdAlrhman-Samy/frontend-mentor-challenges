@@ -1,0 +1,54 @@
+/* Large Screens */
+@media (min-width: 993px) {
+
+    .container {
+        padding: 2em 10em;
+    }
+
+    .navbar__menu-button {
+        display: none;
+    }
+
+    .navbar__links {
+        flex-direction: row;
+        justify-content: end;
+        gap: 3em;
+    }
+
+    .headline__details {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3em;
+        padding: 1em 0;
+    }
+
+    .headline__title {
+        width: 40%;
+    }
+    
+    .headline__description {
+        width: 50%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "main main side"
+        "main main side"
+        "more more more";
+    }
+
+    .recommended {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        height: 75%;
+    }
+
+    .card__details {
+
+        justify-content: space-between;
+    }
+}
