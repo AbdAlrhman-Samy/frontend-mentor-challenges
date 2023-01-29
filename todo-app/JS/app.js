@@ -43,8 +43,14 @@ const getTodos = () => {
 }
 getTodos()
 
-todoInput.addEventListener("keydown", (e)=>{
+todoInput.addEventListener("keyup", (e)=>{
+    let value = e.target.value.trim();
+
     if(e.key === "Enter" || e.which === 13 || e.keyCode === 13){
+        if(!value) {
+            alert("Please add some text. Don't click ENTER on this alert or you'll get stuck lol")
+            return
+        }
         const newTodo = new Todo(e.target.value);    
         createTodo(newTodo)
         TODOS = [...TODOS, newTodo]
