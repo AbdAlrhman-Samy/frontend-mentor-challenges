@@ -43,7 +43,7 @@ const getTodos = () => {
 }
 getTodos()
 
-todoInput.addEventListener("keyup", (e)=>{
+todoInput.addEventListener("keydown", (e)=>{
     let value = e.target.value.trim();
 
     if(e.key === "Enter" || e.which === 13 || e.keyCode === 13){
