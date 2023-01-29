@@ -15,12 +15,8 @@ body {
     background-color: var(--bg-color);
 }
 
-/* html, body {
-    height: 100%;
-} */
 
 .container {
-    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -78,7 +74,7 @@ body {
     color: var(--font-color);
     display: flex;
     flex-direction: column;
-    margin: 2em 0;
+    margin: 1.5em 0;
 }
 
 .todo__list {
@@ -93,6 +89,7 @@ body {
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid var(--dark-grayish-blue);
+    max-width: 100%;
 }
 
 .todo__item--checked {
@@ -123,17 +120,26 @@ body {
     background-repeat: no-repeat;
 }
 
+.todo__text {
+    word-wrap: break-word;
+}
+
 .todo__remove-button {
-    display: none;
+    visibility: hidden;
     margin-left: auto;
     margin-right: 1em;
     cursor: pointer;
     border: none;
     background-color: transparent;
+    background-image: url(../images/icon-cross.svg);
+    height: 1em;
+    width: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .todo__item:hover .todo__remove-button {
-    display: block;
+    visibility: visible;
 }
 
 

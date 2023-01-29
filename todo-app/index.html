@@ -30,71 +30,6 @@
 
             <ul class="todo__list">
 
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet. 1</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-                
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet. 2</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet. 3</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet. 4</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet. 5</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-
-                <li class="todo__item">
-                    <button class="todo__check-button"></button>
-                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
-                    <button class="todo__remove-button">
-                        <img src="images/icon-cross.svg" alt="">
-                    </button>
-                </li>
-                
-
             </ul>
 
 
@@ -102,12 +37,12 @@
                 <span class="todo__count"><b>5</b> items remaining</span>
 
                 <div class="todo__filters--desktop">
-                    <button class="todo__filter-button todo__filter-button--active">All</button>
-                    <button class="todo__filter-button">Active</button>
-                    <button class="todo__filter-button">Completed</button>
+                    <button disabled class="todo__filter-button todo__filter-button--active">All</button>
+                    <button disabled class="todo__filter-button">Active</button>
+                    <button disabled class="todo__filter-button">Completed</button>
                 </div>
 
-                <button class="todo__filter-button">Clear Completed</button>
+                <button class="todo__filter-button" onclick="clearCompleted()">Clear Completed</button>
             </div>
 
             
@@ -115,9 +50,9 @@
         </div>
 
         <div class="todo__filters--mobile">
-            <button class="todo__filter-button todo__filter-button--active">All</button>
-            <button class="todo__filter-button">Active</button>
-            <button class="todo__filter-button">Completed</button>
+            <button disabled class="todo__filter-button todo__filter-button--active">All</button>
+            <button disabled class="todo__filter-button">Active</button>
+            <button disabled class="todo__filter-button">Completed</button>
         </div>
 
     </div>
