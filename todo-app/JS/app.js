@@ -43,12 +43,14 @@ const getTodos = () => {
 }
 getTodos()
 
-todoInput.addEventListener("keyup", (e)=>{
-    if(e.key === "Enter"){
+todoInput.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter" || e.which === 13 || e.keyCode === 13){
         const newTodo = new Todo(e.target.value);    
         createTodo(newTodo)
         TODOS = [...TODOS, newTodo]
         localStorage.setItem("todos", JSON.stringify(TODOS))
+        todoInput.value = ''
+        updateRemaining()
     }
 })
 
