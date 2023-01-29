@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Todo App</title>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <div class="header">
+            <h1 class="header__title">TODO</h1>
+            <button onclick="toggleTheme()" class="header__theme-toggle"></button>
+        </div>
+
+        <div class="data">
+            <button class="todo__check-button"></button>
+            <input type="text" class="data__input" placeholder="Add a new task...">
+        </div>
+
+        <div class="todo">
+
+            <ul class="todo__list">
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet. 1</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+                
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet. 2</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet. 3</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet. 4</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet. 5</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+
+                <li class="todo__item">
+                    <button class="todo__check-button"></button>
+                    <span class="todo__text">Lorem ipsum dolor sit amet.</span>
+                    <button class="todo__remove-button">
+                        <img src="images/icon-cross.svg" alt="">
+                    </button>
+                </li>
+                
+
+            </ul>
+
+
+            <div class="todo__controls">
+                <span class="todo__count"><b>5</b> items remaining</span>
+
+                <div class="todo__filters">
+                    <button class="todo__filter-button todo__filter-button--active">All</button>
+                    <button class="todo__filter-button">Active</button>
+                    <button class="todo__filter-button">Completed</button>
+                </div>
+
+                <button class="todo__filter-button">Clear Completed</button>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    <script src="JS/app.js"></script>
+    
+</body>
+</html>

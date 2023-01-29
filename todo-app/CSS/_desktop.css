@@ -1,0 +1,21 @@
+
+@media(min-width: 800px) {
+
+    .container {
+        padding: 4em 30%;
+    }
+    
+    
+
+}
+
+@media(max-width: 800px) {
+
+    .container {
+        padding: 4em 10%;
+
+    }
+    
+    
+
+}

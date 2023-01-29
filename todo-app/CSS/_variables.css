@@ -1,0 +1,51 @@
+:root {
+    font-size: 18px;
+    --icon: url("../images/icon-moon.svg");
+    --bright-blue: hsl(220, 98%, 61%);
+    --gradient-from: hsl(192, 100%, 67%);
+    --gradient-to: hsl(280, 87%, 65%);
+    
+    --bg-color: hsl(236, 33%, 92%);
+    --list-bg-color: hsl(0, 0%, 98%);
+    --font-color: hsl(235, 19%, 35%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --x-bg-color: hsl(233, 11%, 84%);
+}
+
+[data-theme="dark"] {
+    --icon: url("../images/icon-sun.svg");
+    
+    --bg-color: hsl(235, 21%, 11%);
+    --list-bg-color: hsl(235, 24%, 19%);
+    --font-color: hsl(234, 39%, 85%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    --very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+
+@media(min-width: 800px) {
+
+    :root {
+        --bg-image: url("../images/bg-desktop-light.jpg");
+    }
+
+    [data-theme="dark"] {
+        --bg-image: url("../images/bg-desktop-dark.jpg");
+
+    }
+
+}
+
+@media(max-width: 800px) {
+
+    :root {
+        --bg-image: url("../images/bg-mobile-light.jpg");
+    }
+
+    [data-theme="dark"] {
+        --bg-image: url("../images/bg-mobile-dark.jpg");
+    }
+
+}
