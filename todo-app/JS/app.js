@@ -1,3 +1,7 @@
+window.addEventListener("load", ()=>{
+    const body = document.documentElement.style.height = window.innerHeight
+})
+
 const checkBtns = document.querySelectorAll(".todo__check-button")
 console.log(checkBtns);
 

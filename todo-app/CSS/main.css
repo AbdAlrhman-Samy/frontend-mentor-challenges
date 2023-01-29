@@ -15,8 +15,12 @@ body {
     background-color: var(--bg-color);
 }
 
+/* html, body {
+    height: 100%;
+} */
+
 .container {
-    min-height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,6 +31,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__title {
@@ -73,6 +78,7 @@ body {
     color: var(--font-color);
     display: flex;
     flex-direction: column;
+    margin: 2em 0;
 }
 
 .todo__list {
@@ -163,3 +169,5 @@ body {
     font-weight: 700;
     color: var(--bright-blue);
 }
+
+
