@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     document.documentElement.style.height = window.innerHeight
 })
 
-const updateRemaining = () => {
+const updateRemaining = (TODOS) => {
     remainingTodosCount = TODOS.filter(todo => todo.isDone === false).length
     remainingTodos.innerHTML = `<b>${remainingTodosCount}</b> items remaining`
 }
@@ -35,6 +35,12 @@ const createTodo = (todo) => {
 
 }
 
+const renderTodos = (TODOS) => {
+    todoList.innerHTML = ''
+    TODOS.forEach(todo => createTodo(todo))
+    updateRemaining(TODOS)
+}
+
 form.addEventListener("submit", (e)=>{
     e.preventDefault()
     if(!todoInput.value.trim()) {
@@ -46,7 +52,7 @@ form.addEventListener("submit", (e)=>{
     TODOS = [...TODOS, newTodo]
     localStorage.setItem("todos", JSON.stringify(TODOS))
     todoInput.value = ''
-    updateRemaining()
+    renderTodos(TODOS)
 })
 
 const getTodos = () => {
@@ -54,8 +60,8 @@ const getTodos = () => {
     if(savedTodos){
         TODOS = savedTodos
         savedTodos.forEach(todo => createTodo(todo))
-        updateRemaining()
-    } else console.log('none :(');
+        renderTodos(TODOS)
+    }
 }
 getTodos()
 
@@ -69,34 +75,50 @@ const checkTodo = (e) => {
         } return todo
     })
     localStorage.setItem("todos", JSON.stringify(TODOS))
-    updateRemaining()
+    renderTodos(TODOS)
 }
 
 
 const removeTodo = (e) => {
     const id = e.target.parentElement.getAttribute("data-id")
     TODOS = TODOS.filter(todo => todo.id !== Number(id))
-    console.log(id);
     const element = e.target.parentElement
     element.remove()
     localStorage.setItem("todos", JSON.stringify(TODOS))
-    updateRemaining()
+    updateRemaining(TODOS)
 }
 
 const clearCompleted = () => {
-    console.log('clear');
     TODOS = TODOS.filter(todo => !todo.isDone)
+    renderTodos(TODOS)
     localStorage.setItem("todos", JSON.stringify(TODOS))
-
 }
 
 
 
-// const filterTodos = (filter) => {
-//     if(filter === "all"){
 
-//     }
-// }
+
+const filterTodos = (e, filter) => {
+    if(filter === "all"){
+        renderTodos(TODOS)
+    }
+
+    else if(filter === "active"){
+        const activeTodos = TODOS.filter(todo => !todo.isDone)
+        renderTodos(activeTodos)
+    }
+
+    else if(filter === "completed"){
+        const completedTodos = TODOS.filter(todo => todo.isDone)
+        renderTodos(completedTodos)
+    }
+
+    const filterBtns = document.querySelectorAll(".todo__filter-button--active")
+    filterBtns.forEach(btn => btn.classList.remove("todo__filter-button--active"))
+
+    e.target.classList.add("todo__filter-button--active")
+
+}
 
 // Theme Handler
 let theme;

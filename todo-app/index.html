@@ -37,9 +37,9 @@
                 <span class="todo__count"><b>5</b> items remaining</span>
 
                 <div class="todo__filters--desktop">
-                    <button disabled class="todo__filter-button todo__filter-button--active">All</button>
-                    <button disabled class="todo__filter-button">Active</button>
-                    <button disabled class="todo__filter-button">Completed</button>
+                    <button onclick="filterTodos(event, 'all')" class="todo__filter-button">All</button>
+                    <button onclick="filterTodos(event, 'active')" class="todo__filter-button">Active</button>
+                    <button onclick="filterTodos(event, 'completed')" class="todo__filter-button">Completed</button>
                 </div>
 
                 <button class="todo__filter-button" onclick="clearCompleted()">Clear Completed</button>
@@ -50,9 +50,9 @@
         </div>
 
         <div class="todo__filters--mobile">
-            <button disabled class="todo__filter-button todo__filter-button--active">All</button>
-            <button disabled class="todo__filter-button">Active</button>
-            <button disabled class="todo__filter-button">Completed</button>
+            <button onclick="filterTodos(event, 'all')" class="todo__filter-button todo__filter-button--active">All</button>
+            <button onclick="filterTodos(event, 'active')" class="todo__filter-button">Active</button>
+            <button onclick="filterTodos(event, 'completed')" class="todo__filter-button">Completed</button>
         </div>
 
     </div>
