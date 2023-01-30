@@ -1,6 +1,7 @@
 const todoList = document.querySelector(".todo__list")
 const todoInput = document.querySelector(".data__input")
 const remainingTodos = document.querySelector(".todo__count")
+const form = document.querySelector(".data")
 let todoCount;
 let TODOS = [];
 
@@ -19,6 +20,7 @@ function Todo(text){
     this.id = Math.round(Math.random() * 10000)
 }
 
+
 const createTodo = (todo) => {
     const todoTemplate = `
     <li class="todo__item ${todo.isDone? "todo__item--checked" : ""}" data-id=${todo.id}>
@@ -33,6 +35,20 @@ const createTodo = (todo) => {
 
 }
 
+form.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    if(!todoInput.value.trim()) {
+        alert("Please add some text.")
+        return
+    }
+    const newTodo = new Todo(todoInput.value.trim());    
+    createTodo(newTodo)
+    TODOS = [...TODOS, newTodo]
+    localStorage.setItem("todos", JSON.stringify(TODOS))
+    todoInput.value = ''
+    updateRemaining()
+})
+
 const getTodos = () => {
     const savedTodos = JSON.parse(localStorage.getItem("todos"))
     if(savedTodos){
@@ -42,24 +58,6 @@ const getTodos = () => {
     } else console.log('none :(');
 }
 getTodos()
-
-todoInput.addEventListener("keydown", (e)=>{
-    let value = e.target.value.trim();
-
-    if(e.key === "Enter" || e.which === 13 || e.keyCode === 13){
-        if(!value) {
-            alert("Please add some text. Don't click ENTER on this alert or you'll get stuck lol")
-            return
-        }
-        const newTodo = new Todo(e.target.value);    
-        createTodo(newTodo)
-        TODOS = [...TODOS, newTodo]
-        localStorage.setItem("todos", JSON.stringify(TODOS))
-        todoInput.value = ''
-        updateRemaining()
-    }
-})
-
 
 const checkTodo = (e) => {
     const id = e.target.parentElement.getAttribute("data-id")
