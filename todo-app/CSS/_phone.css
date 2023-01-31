@@ -5,10 +5,6 @@
 
     }
 
-    .todo__text {
-        font-size: 0.75em;
-    }
-
     .todo__filters--desktop {
         display: none;
     }

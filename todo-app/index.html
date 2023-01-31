@@ -22,8 +22,8 @@
         </div>
 
         <form class="data">
-            <button class="todo__check-button"></button>
-            <input type="text" class="data__input" placeholder="Add a new task...">
+            <input type="checkbox" class="data__check-button"/>
+            <input type="text" class="data__input" placeholder="Add a new task and hit Enter...">
         </form>
 
         <div class="todo">
@@ -34,7 +34,7 @@
 
 
             <div class="todo__controls">
-                <span class="todo__count"><b>5</b> items remaining</span>
+                <span class="todo__count"></span>
 
                 <div class="todo__filters--desktop">
                     <button onclick="filterTodos(event, 'all')" class="todo__filter-button">All</button>
@@ -57,7 +57,7 @@
 
     </div>
 
-
+    <script src="JS/theme.js"></script>
     <script src="JS/app.js"></script>
     
 </body>

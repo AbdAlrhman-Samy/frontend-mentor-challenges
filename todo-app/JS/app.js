@@ -1,26 +1,24 @@
 const todoList = document.querySelector(".todo__list")
 const todoInput = document.querySelector(".data__input")
+const todoChecked = document.querySelector(".data__check-button")
 const remainingTodos = document.querySelector(".todo__count")
 const form = document.querySelector(".data")
-let todoCount;
 let TODOS = [];
 
-window.addEventListener("load", () => {
-    document.documentElement.style.height = window.innerHeight
-})
-
-const updateRemaining = (TODOS) => {
-    remainingTodosCount = TODOS.filter(todo => todo.isDone === false).length
-    remainingTodos.innerHTML = `<b>${remainingTodosCount}</b> items remaining`
-}
-
-function Todo(text){
+// Create new TODO object
+function Todo(text, isDone){
     this.text = text
-    this.isDone = false
+    this.isDone = isDone
     this.id = Math.round(Math.random() * 10000)
 }
 
+// Update remaining count
+const updateRemaining = (TODOS) => {
+    const remainingTodosCount = TODOS.filter(todo => todo.isDone === false).length
+    remainingTodos.innerHTML = `<b>${remainingTodosCount}</b> items remaining`
+}
 
+// Create a new li html element
 const createTodo = (todo) => {
     const todoTemplate = `
     <li class="todo__item ${todo.isDone? "todo__item--checked" : ""}" data-id=${todo.id}>
@@ -32,22 +30,23 @@ const createTodo = (todo) => {
     `;
 
     todoList.insertAdjacentHTML("beforeend", todoTemplate)
-
 }
 
+// updates list based on the passed state of TODOS array
 const renderTodos = (TODOS) => {
     todoList.innerHTML = ''
     TODOS.forEach(todo => createTodo(todo))
     updateRemaining(TODOS)
 }
 
+// Handles text input
 form.addEventListener("submit", (e)=>{
     e.preventDefault()
     if(!todoInput.value.trim()) {
         alert("Please add some text.")
         return
     }
-    const newTodo = new Todo(todoInput.value.trim());    
+    const newTodo = new Todo(todoInput.value.trim(), todoChecked.checked);    
     createTodo(newTodo)
     TODOS = [...TODOS, newTodo]
     localStorage.setItem("todos", JSON.stringify(TODOS))
@@ -95,9 +94,6 @@ const clearCompleted = () => {
 }
 
 
-
-
-
 const filterTodos = (e, filter) => {
     if(filter === "all"){
         renderTodos(TODOS)
@@ -119,35 +115,3 @@ const filterTodos = (e, filter) => {
     e.target.classList.add("todo__filter-button--active")
 
 }
-
-// Theme Handler
-let theme;
-
-const checkTheme = () => {
-    const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    let savedTheme = localStorage.getItem("theme")
-    if(savedTheme){
-        document.documentElement.setAttribute("data-theme", savedTheme)
-    } else {
-        if(prefersDarkTheme) {
-            localStorage.setItem("theme", "dark")
-            theme = "dark"
-        }
-
-        else{
-            localStorage.setItem("theme", "light")
-            theme = "light"
-        }  
-        
-        document.documentElement.setAttribute("data-theme", theme)
-
-    }
-}
-
-const toggleTheme = () => {
-    theme = theme==="dark" ? "light" : "dark"
-    document.documentElement.setAttribute("data-theme", theme)
-    localStorage.setItem("theme", document.documentElement.getAttribute("data-theme"))
-}
-
-checkTheme()
